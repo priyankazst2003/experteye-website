@@ -2,6 +2,10 @@ import React from 'react';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import Welcome from './components/Welcome/Welcome';
+import About from './components/About/About';
+import Services from './components/Services/Services';
+import Testimonials from './components/Testimonials/Testimonials';
+import Contact from './components/Contact/Contact';
 
 function App() {
   return (
@@ -9,7 +13,11 @@ function App() {
       <Header />
       <Hero />
       <Welcome />
-      {/* We'll add more sections here later */}
+      <About />
+      <Services />
+      <Testimonials />
+      <Contact />
+      {/* We'll add footer section next */}
     </div>
   );
 }

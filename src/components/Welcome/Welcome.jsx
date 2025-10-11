@@ -19,7 +19,7 @@ const Welcome = () => {
           {/* Right Side - Content */}
           <div className="md:w-1/2 md:pl-8">
             {/* Gradient Heading */}
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-900 to-sky-500 bg-clip-text text-transparent">
               Welcome to Expert Eye
             </h2>
             <div className="space-y-4 text-gray-600 leading-relaxed">

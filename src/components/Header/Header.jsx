@@ -1,47 +1,60 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const timeoutRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsServicesOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 200); // 200ms delay before closing
+  };
 
   return (
     <header className="bg-white shadow-sm">
       <div className="container mx-auto px-4">
-        {/* Main Navigation */}
         <nav className="py-4">
           <div className="flex justify-between items-center">
-            {/* Logo with Image */}
+            {/* Logo */}
             <div className="flex items-center">
-              <img 
-                src="/images/logo.png" 
-                alt="Expert Eye Logo" 
-                className="h-16 w-auto"
-              />
+              <Link to="/">
+                <img 
+                  src="/images/logo.png" 
+                  alt="Expert Eye Logo" 
+                  className="h-16 w-auto"
+                />
+              </Link>
             </div>
             
             {/* Navigation Links */}
             <div className="hidden md:flex space-x-8 items-center">
-              {/* Home - Active by default */}
-              <a 
-                href="#home" 
-                className="text-blue-600 font-medium transition duration-200 border-b-2 border-blue-600 pb-1"
-              >
+              {/* Home */}
+              <Link to="/" className="text-blue-600 font-medium transition duration-200 border-b-2 border-blue-600 pb-1">
                 Home
-              </a>
+              </Link>
               
-              <a 
-                href="#about" 
-                className="text-gray-700 hover:text-blue-600 font-medium transition duration-200"
-              >
+              {/* About Us */}
+              <Link to="/about" className="text-gray-700 hover:text-blue-600 font-medium transition duration-200">
                 About Us
-              </a>
+              </Link>
               
               {/* Services Dropdown */}
               <div 
                 className="relative"
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onMouseLeave={() => setIsServicesOpen(false)}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
-                <button className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition duration-200">
+                <button 
+                  className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition duration-200"
+                >
                   Services
                   <svg 
                     className={`w-4 h-4 ml-1 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} 
@@ -55,53 +68,54 @@ const Header = () => {
                 
                 {/* Dropdown Menu */}
                 {isServicesOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50 border border-gray-200">
-                    <a href="#electrical" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200">
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50 border border-gray-200"
+                  >
+                    <Link 
+                      to="/electrical-services" 
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200"
+                      onClick={() => setIsServicesOpen(false)}
+                    >
                       Electrical Services
-                    </a>
-                    <a href="#mechanical" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200">
+                    </Link>
+                    <Link 
+                      to="/mechanical-services" 
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200"
+                      onClick={() => setIsServicesOpen(false)}
+                    >
                       Mechanical Services
-                    </a>
-                    <a href="#maintenance" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200">
+                    </Link>
+                    <Link 
+                      to="/maintenance" 
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200"
+                      onClick={() => setIsServicesOpen(false)}
+                    >
                       Maintenance
-                    </a>
-                    <a href="#consultation" className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200">
+                    </Link>
+                    <Link 
+                      to="/consultation" 
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200"
+                      onClick={() => setIsServicesOpen(false)}
+                    >
                       Consultation
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>
               
-              <a 
-                href="#contact" 
-                className="text-gray-700 hover:text-blue-600 font-medium transition duration-200"
-              >
+              {/* Contact Us */}
+              <Link to="/contact" className="text-gray-700 hover:text-blue-600 font-medium transition duration-200">
                 Contact Us
-              </a>
+              </Link>
               
-              {/* Apply Now Button with custom curve and arrow */}
-<a 
-  href="#apply" 
-  className="bg-sky-400 text-white px-6 py-3 rounded-tl-2xl rounded-br-2xl hover:bg-blue-200 transition duration-200 font-medium shadow-md hover:shadow-lg flex items-center space-x-2 border border-blue-200"
->
-  <span>Apply Now</span>
-  <svg 
-    className="w-4 h-4" 
-    fill="none" 
-    stroke="currentColor" 
-    viewBox="0 0 24 24"
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-  </svg>
-</a>
+              {/* Apply Now Button */}
+              <Link to="/apply" className="bg-sky-400 text-white px-6 py-3 rounded-tl-2xl rounded-br-2xl hover:bg-blue-200 transition duration-200 font-medium shadow-md hover:shadow-lg flex items-center space-x-2 border border-blue-200">
+                <span>Apply Now</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
             </div>
-            
-            {/* Mobile Menu Button */}
-            <button className="md:hidden text-gray-700">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
           </div>
         </nav>
       </div>

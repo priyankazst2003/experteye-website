@@ -9,6 +9,8 @@ import Footer from './components/Footer/Footer';
 import ContactForm from './Pages/ContactForm';
 import AboutPage from './Pages/AboutPage';
 import ElectricalServices from './Pages/ElectricalServices';
+import Welcome from './components/Welcome/Welcome';
+import About from './components/About/About';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="/" element={
             <>
               <Hero />
+              <Welcome />
+              <About />
               <Services />
               <Testimonials />
               <Contact />

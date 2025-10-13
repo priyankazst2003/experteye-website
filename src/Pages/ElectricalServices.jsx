@@ -12,7 +12,9 @@ const ElectricalServices = () => {
             </h1>
             <div className="w-24 h-1 bg-blue-500 mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Professional installation, maintenance, repair, and upgrades of electrical systems for residential, commercial, and industrial settings.
+              Electrical services include installation, maintenance, repair, and upgrades of electrical 
+                systems in residential, commercial, and industrial settings. These services are performed 
+                by licensed professionals to ensure safety and compliance with building codes.
             </p>
           </div>
 
@@ -33,14 +35,7 @@ const ElectricalServices = () => {
 
             {/* Right Side - Content */}
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-gray-800">
-                Comprehensive Electrical Solutions
-              </h2>
-              <p className="text-gray-600 leading-relaxed text-lg">
-                Electrical services include installation, maintenance, repair, and upgrades of electrical 
-                systems in residential, commercial, and industrial settings. These services are performed 
-                by licensed professionals to ensure safety and compliance with building codes.
-              </p>
+              
               
               {/* Residential Services Section */}
               <div className="bg-gray-50 rounded-lg p-6">

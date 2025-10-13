@@ -37,12 +37,12 @@ const Header = () => {
             {/* Navigation Links */}
             <div className="hidden md:flex space-x-8 items-center">
               {/* Home */}
-              <Link to="/" className="text-blue-600 font-medium transition duration-200 border-b-2 border-blue-600 pb-1">
+              <Link to="/" className="text-blue-800 font-medium transition duration-200 border-b-2 border-blue-800 pb-1">
                 Home
               </Link>
               
               {/* About Us */}
-              <Link to="/about" className="text-gray-700 hover:text-blue-600 font-medium transition duration-200">
+              <Link to="/about" className="text-gray-700 hover:text-blue-800 font-medium transition duration-200">
                 About Us
               </Link>
               
@@ -53,7 +53,7 @@ const Header = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <button 
-                  className="flex items-center text-gray-700 hover:text-blue-600 font-medium transition duration-200"
+                  className="flex items-center text-gray-700 hover:text-blue-800 font-medium transition duration-200"
                 >
                   Services
                   <svg 
@@ -73,28 +73,28 @@ const Header = () => {
                   >
                     <Link 
                       to="/electrical-services" 
-                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200"
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition duration-200"
                       onClick={() => setIsServicesOpen(false)}
                     >
                       Electrical Services
                     </Link>
                     <Link 
                       to="/mechanical-services" 
-                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200"
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition duration-200"
                       onClick={() => setIsServicesOpen(false)}
                     >
                       Mechanical Services
                     </Link>
                     <Link 
                       to="/maintenance" 
-                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200"
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition duration-200"
                       onClick={() => setIsServicesOpen(false)}
                     >
                       Maintenance
                     </Link>
                     <Link 
                       to="/consultation" 
-                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition duration-200"
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition duration-200"
                       onClick={() => setIsServicesOpen(false)}
                     >
                       Consultation
@@ -104,7 +104,7 @@ const Header = () => {
               </div>
               
               {/* Contact Us */}
-              <Link to="/contact" className="text-gray-700 hover:text-blue-600 font-medium transition duration-200">
+              <Link to="/contact" className="text-gray-700 hover:text-blue-800 font-medium transition duration-200">
                 Contact Us
               </Link>
               

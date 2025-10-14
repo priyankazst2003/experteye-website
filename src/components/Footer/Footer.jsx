@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -7,17 +8,20 @@ const Footer = () => {
         <div className="flex flex-col items-center">
           {/* Links */}
           <div className="flex flex-wrap justify-center gap-6 mb-4">
-            <a href="#" className="text-white-300 hover:text-white transition-colors duration-200">
+            <Link 
+              to="/faq" className="text-white-300 hover:text-white transition-colors duration-200">
               FAQ
-            </a>
+             </Link>
             <span className="text-white-500">|</span>
-            <a href="#" className="text-white-300 hover:text-white transition-colors duration-200">
+            <Link 
+              to="/terms-of-use"  className="text-white-300 hover:text-white transition-colors duration-200">
               Terms of Use
-            </a>
+            </Link>
             <span className="text-white-500">|</span>
-            <a href="#" className="text-white-300 hover:text-white transition-colors duration-200">
+            <Link 
+              to="/privacy-policy" className="text-white-300 hover:text-white transition-colors duration-200">
               Privacy Policy
-            </a>
+            </Link>
           </div>
           
           {/* Copyright */}

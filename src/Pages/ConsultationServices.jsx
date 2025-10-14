@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ElectricalServices = () => {
+const ConsultationServices = () => {
   return (
     <section className="bg-white py-16 md:py-24">
       <div className="container mx-auto px-4">
@@ -8,11 +8,11 @@ const ElectricalServices = () => {
           {/* Header Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-blue-400 mb-6">
-              Electrical Services
+              Consultation Services
             </h1>
             <div className="w-24 h-1 bg-blue-400 mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-7xl mx-auto">
-              Electrical services include installation, maintenance, repair, and upgrades of electrical systems in residential, commercial, and industrial settings. These services are performed by licensed professionals to ensure safety and compliance with building codes.
+              Expert consultation services to help you make informed decisions about your electrical and mechanical systems. Our experienced consultants provide tailored solutions, technical advice, and strategic planning for optimal system performance and efficiency.
             </p>
           </div>
 
@@ -23,9 +23,8 @@ const ElectricalServices = () => {
               <div className="relative">
                 <div className="w-full h-80 bg-gradient-to-br from-blue-800 to-sky-500 rounded-2xl flex items-center justify-center p-8">
                   <img 
-                    src="/images/download.jpg" 
-                    alt="Electrical Services" 
-                    
+                    src="/images/images (8).jpg" 
+                    alt="Consultation Services" 
                   />
                 </div>
               </div>
@@ -34,14 +33,13 @@ const ElectricalServices = () => {
             {/* Right Side - Content */}
             <div className="space-y-6">
               
-              
-              {/* Residential Services Section */}
+              {/* Consultation Services Section */}
               <div className="bg-gray-50 rounded-lg p-6">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-                  Residential Electrical Services
+                  Professional Consultation Services
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  These services are for private homes and typically involve:
+                  Our expert consultation services provide comprehensive guidance and include:
                 </p>
                 
                 <div className="space-y-4">
@@ -52,8 +50,8 @@ const ElectricalServices = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800">Wiring and Rewiring</h4>
-                      <p className="text-gray-600 text-sm">Installation of new wiring and replacement of old, faulty, or outdated wiring for safety and efficiency.</p>
+                      <h4 className="font-semibold text-gray-800">System Design Consultation</h4>
+                      <p className="text-gray-600 text-sm">Expert advice on designing efficient electrical and mechanical systems for new construction or renovations.</p>
                     </div>
                   </div>
 
@@ -64,8 +62,8 @@ const ElectricalServices = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800">Lighting Installation</h4>
-                      <p className="text-gray-600 text-sm">Installation of fixtures, ceiling fans, and specialized lighting like landscape or emergency lighting.</p>
+                      <h4 className="font-semibold text-gray-800">Energy Efficiency Analysis</h4>
+                      <p className="text-gray-600 text-sm">Comprehensive assessment of your systems to identify energy-saving opportunities and reduce operational costs.</p>
                     </div>
                   </div>
 
@@ -76,8 +74,8 @@ const ElectricalServices = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800">Panel Upgrades</h4>
-                      <p className="text-gray-600 text-sm">Service and replacement of outdated circuit breaker panels to meet increased power demands.</p>
+                      <h4 className="font-semibold text-gray-800">Technical Feasibility Studies</h4>
+                      <p className="text-gray-600 text-sm">Detailed analysis of project requirements and technical viability for successful implementation.</p>
                     </div>
                   </div>
 
@@ -88,21 +86,21 @@ const ElectricalServices = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800">Appliance Hookups</h4>
-                      <p className="text-gray-600 text-sm">Installation of wiring and connections for new home appliances like washers, dryers, and air conditioners.</p>
+                      <h4 className="font-semibold text-gray-800">Compliance and Code Review</h4>
+                      <p className="text-gray-600 text-sm">Ensuring all systems meet local building codes, safety standards, and regulatory requirements.</p>
                     </div>
                   </div>
 
-                  
                 </div>
               </div>
 
             </div>
           </div>
+
         </div>
       </div>
     </section>
   );
 };
 
-export default ElectricalServices;
+export default ConsultationServices;

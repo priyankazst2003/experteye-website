@@ -24,7 +24,7 @@ const Hero = () => {
             </p>
             
             {/* Contact Us Button */}
-            <button className="bg-sky-400 text-white px-6 py-3 rounded-tl-2xl rounded-br-2xl hover:bg-blue-200 transition duration-200 font-medium shadow-md hover:shadow-lg flex items-center space-x-2 border border-blue-200">
+             <button className="bg-sky-400 text-white px-6 py-3 rounded-tl-2xl rounded-br-2xl hover:bg-blue-200 transition duration-200 font-medium shadow-md hover:shadow-lg flex items-center space-x-2 border border-blue-200">
               <span>Contact Us</span>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

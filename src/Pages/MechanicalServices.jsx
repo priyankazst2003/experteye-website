@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ElectricalServices = () => {
+const MechanicalServices = () => {
   return (
     <section className="bg-white py-16 md:py-24">
       <div className="container mx-auto px-4">
@@ -8,11 +8,11 @@ const ElectricalServices = () => {
           {/* Header Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-blue-400 mb-6">
-              Electrical Services
+              Mechanical Services
             </h1>
             <div className="w-24 h-1 bg-blue-400 mx-auto mb-6"></div>
             <p className="text-xl text-gray-600 max-w-7xl mx-auto">
-              Electrical services include installation, maintenance, repair, and upgrades of electrical systems in residential, commercial, and industrial settings. These services are performed by licensed professionals to ensure safety and compliance with building codes.
+              Mechanical services encompass the installation, maintenance, repair, and optimization of mechanical systems in residential, commercial, and industrial facilities. Our certified technicians ensure optimal performance and compliance with industry standards.
             </p>
           </div>
 
@@ -23,9 +23,8 @@ const ElectricalServices = () => {
               <div className="relative">
                 <div className="w-full h-80 bg-gradient-to-br from-blue-800 to-sky-500 rounded-2xl flex items-center justify-center p-8">
                   <img 
-                    src="/images/download.jpg" 
-                    alt="Electrical Services" 
-                    
+                    src="/images/download (1).jpg" 
+                    alt="Mechanical Services" 
                   />
                 </div>
               </div>
@@ -34,11 +33,10 @@ const ElectricalServices = () => {
             {/* Right Side - Content */}
             <div className="space-y-6">
               
-              
               {/* Residential Services Section */}
               <div className="bg-gray-50 rounded-lg p-6">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-                  Residential Electrical Services
+                  Residential Mechanical Services
                 </h3>
                 <p className="text-gray-600 mb-4">
                   These services are for private homes and typically involve:
@@ -52,8 +50,8 @@ const ElectricalServices = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800">Wiring and Rewiring</h4>
-                      <p className="text-gray-600 text-sm">Installation of new wiring and replacement of old, faulty, or outdated wiring for safety and efficiency.</p>
+                      <h4 className="font-semibold text-gray-800">HVAC Systems</h4>
+                      <p className="text-gray-600 text-sm">Installation, maintenance, and repair of heating, ventilation, and air conditioning systems for optimal climate control.</p>
                     </div>
                   </div>
 
@@ -64,8 +62,8 @@ const ElectricalServices = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800">Lighting Installation</h4>
-                      <p className="text-gray-600 text-sm">Installation of fixtures, ceiling fans, and specialized lighting like landscape or emergency lighting.</p>
+                      <h4 className="font-semibold text-gray-800">Plumbing Systems</h4>
+                      <p className="text-gray-600 text-sm">Installation and repair of water supply lines, drainage systems, fixtures, and water heaters.</p>
                     </div>
                   </div>
 
@@ -76,8 +74,8 @@ const ElectricalServices = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800">Panel Upgrades</h4>
-                      <p className="text-gray-600 text-sm">Service and replacement of outdated circuit breaker panels to meet increased power demands.</p>
+                      <h4 className="font-semibold text-gray-800">Appliance Installation</h4>
+                      <p className="text-gray-600 text-sm">Professional installation and hookup of mechanical appliances like water heaters, furnaces, and AC units.</p>
                     </div>
                   </div>
 
@@ -88,8 +86,8 @@ const ElectricalServices = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800">Appliance Hookups</h4>
-                      <p className="text-gray-600 text-sm">Installation of wiring and connections for new home appliances like washers, dryers, and air conditioners.</p>
+                      <h4 className="font-semibold text-gray-800">Ductwork Services</h4>
+                      <p className="text-gray-600 text-sm">Design, installation, and cleaning of air duct systems for efficient airflow and indoor air quality.</p>
                     </div>
                   </div>
 
@@ -99,10 +97,14 @@ const ElectricalServices = () => {
 
             </div>
           </div>
+
+          
+
+         
         </div>
       </div>
     </section>
   );
 };
 
-export default ElectricalServices;
+export default MechanicalServices;

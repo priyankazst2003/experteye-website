@@ -11,6 +11,12 @@ import AboutPage from './Pages/AboutPage';
 import ElectricalServices from './Pages/ElectricalServices';
 import Welcome from './components/Welcome/Welcome';
 import About from './components/About/About';
+import MechanicalServices from './Pages/MechanicalServices';
+import MaintenanceServices from './Pages/MaintenanceServices';
+import ConsultationServices from './Pages/ConsultationServices';
+import FAQ from './Pages/FAQ';
+import TermsOfUse from './Pages/TermsOfUse';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
 
 function App() {
   return (
@@ -27,6 +33,7 @@ function App() {
               <Services />
               <Testimonials />
               <Contact />
+              
             </>
           } />
           
@@ -35,6 +42,19 @@ function App() {
           
           {/* Electrical Services Page Route */}
           <Route path="/electrical-services" element={<ElectricalServices />} />
+
+          <Route path="/mechanical-services" element={<MechanicalServices />} />
+
+          <Route path="/maintenance" element={<MaintenanceServices />} />
+
+          <Route path="/consultation" element={<ConsultationServices />} />
+
+          <Route path="/faq" element={<FAQ />} />
+
+          <Route path="/terms-of-use" element={<TermsOfUse />} />
+
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
           
           {/* Contact Page Route */}
           <Route path="/contact" element={<ContactForm />} />
@@ -62,12 +82,7 @@ function App() {
           } />
           
           {/* Apply Page Route */}
-          <Route path="/apply" element={
-            <div className="py-16 text-center">
-              <h1 className="text-3xl font-bold">Apply Now Page</h1>
-              <p className="text-gray-600 mt-4">This page is under construction.</p>
-            </div>
-          } />
+          <Route path="/apply" element={<ContactForm />} />
         </Routes>
         <Footer />
       </div>

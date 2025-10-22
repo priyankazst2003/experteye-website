@@ -17,6 +17,7 @@ import ConsultationServices from './Pages/ConsultationServices';
 import FAQ from './Pages/FAQ';
 import TermsOfUse from './Pages/TermsOfUse';
 import PrivacyPolicy from './Pages/PrivacyPolicy';
+import ProjectsPage from './Pages/ProjectsPage';
 
 function App() {
   return (
@@ -54,6 +55,8 @@ function App() {
           <Route path="/terms-of-use" element={<TermsOfUse />} />
 
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+          <Route path="/projects" component={<ProjectsPage />} />
 
           
           {/* Contact Page Route */}

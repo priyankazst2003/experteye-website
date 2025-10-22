@@ -102,6 +102,11 @@ const Header = () => {
                   </div>
                 )}
               </div>
+
+               {/* Projects */}
+              <Link to="/projects" className="text-gray-700 hover:text-blue-800 font-medium transition duration-200">
+                Projects
+              </Link>
               
               {/* Contact Us */}
               <Link to="/contact" className="text-gray-700 hover:text-blue-800 font-medium transition duration-200">

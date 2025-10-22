@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,15 @@ const ContactForm = () => {
     address: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // 🔥 REPLACE THESE WITH YOUR ACTUAL EMAILJS CREDENTIALS
+  const EMAILJS_CONFIG = {
+    SERVICE_ID: 'service_4muab7i', // From EmailJS > Email Services
+    TEMPLATE_ID_ORG: 'template_0udbabg', // Template for info@experteye.com
+    TEMPLATE_ID_USER: 'template_v9nu2in', // Template for user thank you
+    PUBLIC_KEY: '9TIsHV4sTEjMYUrG9' // From EmailJS > Account > API Keys
+  };
 
   const handleChange = (e) => {
     setFormData({
@@ -15,20 +25,64 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const now = new Date();
+    const submissionTime = now.toLocaleString();
+
+    console.log('Sending emails with config:', EMAILJS_CONFIG);
+
+    // Send to organization
+    const orgResponse = await emailjs.send(
+      EMAILJS_CONFIG.SERVICE_ID,
+      EMAILJS_CONFIG.TEMPLATE_ID_ORG,
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        from_address: formData.address || 'Not provided',
+        message: formData.message || 'Not provided',
+        submission_time: submissionTime
+      },
+      EMAILJS_CONFIG.PUBLIC_KEY
+    );
+    console.log('Organization email sent:', orgResponse);
+
+    // Send to user
+    const userResponse = await emailjs.send(
+      EMAILJS_CONFIG.SERVICE_ID,
+      EMAILJS_CONFIG.TEMPLATE_ID_USER,
+      {
+        to_name: formData.name,
+        to_email: formData.email,
+        address: formData.address || 'Not provided',
+        message: formData.message || 'Not provided',
+        submission_date: now.toLocaleDateString()
+      },
+      EMAILJS_CONFIG.PUBLIC_KEY
+    );
+    console.log('User email sent:', userResponse);
+
     alert('Thank you for your message! We will get back to you soon.');
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      address: '',
-      message: ''
+    setFormData({ name: '', email: '', address: '', message: '' });
+
+  } catch (error) {
+    console.error('Detailed EmailJS Error:', error);
+    console.error('Error details:', {
+      text: error.text,
+      status: error.status,
+      serviceId: EMAILJS_CONFIG.SERVICE_ID,
+      templateIdOrg: EMAILJS_CONFIG.TEMPLATE_ID_ORG,
+      templateIdUser: EMAILJS_CONFIG.TEMPLATE_ID_USER,
+      publicKey: EMAILJS_CONFIG.PUBLIC_KEY ? 'Set' : 'Missing'
     });
-  };
+    alert('Sorry, there was an error sending your message. Please try again.');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <section className="bg-gray-100 py-16 md:py-24">
@@ -114,13 +168,14 @@ const ContactForm = () => {
                 ></textarea>
               </div>
 
-              {/* Submit Button */}
+              {/* Submit Button - UPDATED */}
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="w-full bg-blue-800 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  disabled={isSubmitting}
+                  className="w-full bg-blue-800 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </div>
 
